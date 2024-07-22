@@ -38,6 +38,10 @@ class BetterResponse extends Response {
     init.headers = headers;
     super(body, init);
   }
+
+
+  // Additional Values
+  error: boolean = this.status >= 400;
 };
 
 
