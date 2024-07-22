@@ -1,27 +1,49 @@
 # Better Response
-Better Response is a lightweight wrapper around the [`Response`](https://developer.mozilla.org/en-US/docs/Web/API/Response/Response) class of Javascript
+
+`BetterResponse` is a lightweight wrapper around the [`Response`](https://developer.mozilla.org/en-US/docs/Web/API/Response/Response) class in JavaScript, designed to simplify response creation and enhance control over caching and JSON serialization.
+
+## Installation
+
+To use `BetterResponse`, simply include it in your project. You can install it via npm:
+
+```bash
+npm install better-response
+```
+
+Here's a quick example of how to import `BetterResponse` in your project:
+
+```js
+import BetterResponse from "better-response";
+```
 
 ## Features
 
-### Automatic JSON stringify
+### Automatic JSON Stringify
 
-Better response automatically converts the objects to JSON by also adding the correct headers.
+`BetterResponse` automatically converts objects to JSON and sets the appropriate headers, streamlining the process of creating JSON responses.
 
 ```js
-// With Better Reponse
-new BetterResponse({ hello: "word" }) 
+// Using BetterResponse
+new BetterResponse({ hello: "world" });
 
-// With Response
-new Response(JSON.stringify({ hello: "world" }))
+// Using Response
+new Response(JSON.stringify({ hello: "world" }), {
+  headers: { "Content-Type": "application/json" }
+});
 ```
 
 ### Cache Control
-Better response helps you manage caching times.
+
+`BetterResponse` provides convenient caching options to manage response caching times.
 
 ```js
-// Defualt Value
-new BetterResponse("cache is amazing!", { status: 200, cache: "default" });
+// Default Caching
+new BetterResponse("Cache is amazing!", { status: 200, cache: "default" });
 
-// Date
-new BetterResponse("cache is amazing!", { status: 200, cache: 1000 * 60 });
+// Custom Cache Duration (in milliseconds)
+new BetterResponse("Cache is amazing!", { status: 200, cache: 1000 * 60 }); // Cache for 1 minute
 ```
+
+## License
+
+`BetterResponse` is licensed under the MIT License. See the [LICENSE](LICENSE) file for more details.
