@@ -1,13 +1,13 @@
 interface CustomResponseInit extends ResponseInit {
   securityHeaders?: boolean;
   cache?:
-    | "default"
-    | "no-store"
-    | "reload"
-    | "no-cache"
-    | "force-cache"
-    | "only-if-cached"
-    | number;
+  | "default"
+  | "no-store"
+  | "reload"
+  | "no-cache"
+  | "force-cache"
+  | "only-if-cached"
+  | number;
 }
 
 class BetterResponse extends Response {
@@ -57,3 +57,4 @@ class BetterResponse extends Response {
 }
 
 export default BetterResponse;
+export { CustomResponseInit, BetterResponse };
