@@ -7,6 +7,10 @@
   "scripts": {
     "build": "tsup"
   },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/vclemenzi/better-response.git"
+  },
   "keywords": [
     "response",
     "http"
