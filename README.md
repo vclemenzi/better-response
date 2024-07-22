@@ -23,5 +23,5 @@ Better response helps you manage caching times.
 new BetterResponse("cache is amazing!", { status: 200, cache: "default" });
 
 // Date
-new BetterResponse("cache is amazing!", { status: 200, cache: new Date(Date.now() + 1000 * 60) });
+new BetterResponse("cache is amazing!", { status: 200, cache: 1000 * 60 });
 ```

@@ -7,5 +7,5 @@ console.log(
   new BetterResponse("cache is amazing!", { status: 200, cache: "default" }),
 
   // Or you can set a Date object
-  new BetterResponse("cache is amazing!", { status: 200, cache: new Date(Date.now() + 1000 * 60) }),
+  new BetterResponse("cache is amazing!", { status: 200, cache: 1000 * 60 }),
 );

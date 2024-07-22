@@ -1,6 +1,6 @@
 interface CustomResponseInit extends ResponseInit {
   securityHeaders?: boolean;
-  cache?: "default" | "no-store" | "reload" | "no-cache" | "force-cache" | "only-if-cached" | Date;
+  cache?: "default" | "no-store" | "reload" | "no-cache" | "force-cache" | "only-if-cached" | number;
 }
 
 class BetterResponse extends Response {
@@ -28,8 +28,8 @@ class BetterResponse extends Response {
     }
 
     if (init.cache) {
-      if (typeof init.cache === "object") {
-        headers.set("Cache-Control", `max-age=${Math.floor((init.cache as Date).getTime() / 1000)}`);
+      if (typeof init.cache === "number") {
+        headers.set("Cache-Control", `max-age=${Math.floor(new Date(Date.now() + init.cache).getTime() / 1000)}`);
       } else {
         headers.set("Cache-Control", init.cache);
       }
